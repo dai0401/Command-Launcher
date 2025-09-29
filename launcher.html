@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Command Launcher</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #000000;
+      color: white;
+      width: 300px; /* Keep width consistent */
+    }
+    #widget-container {
+      padding: 15px;
+      text-align: center;
+    }
+    #datetime-widget {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    #todo-display-widget {
+      margin-top: 15px;
+      text-align: left;
+      font-size: 13px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+    }
+    .todo-display-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .todo-display-item {
+      padding: 4px 0;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .todo-display-item .datetime {
+      font-size: 12px;
+      color: #aaa;
+      flex-shrink: 0;
+      width: 75px; /* Allocate space for date */
+    }
+    .todo-display-item .content {
+      color: white;
+    }
+    #news-widget {
+      margin-top: 15px;
+      text-align: left;
+      font-size: 13px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+    }
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-list li {
+      padding: 5px 0;
+    }
+    .news-list a {
+      color: #9eceff; /* A light blue for links */
+      text-decoration: none;
+    }
+    .news-list a:hover {
+      text-decoration: underline;
+    }
+    #result-container {
+      padding: 10px 15px;
+      font-size: 16px;
+      font-weight: bold;
+      min-height: 20px; /* Reserve space */
+      word-wrap: break-word; /* Wrap long results */
+      background-color: #1a1a1a; /* Slightly different background */
+    }
+    #command-container {
+      padding: 0 15px 15px 15px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      box-sizing: border-box; /* Important for padding */
+      border: 1px solid #555;
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="widget-container">
+    <div id="datetime-widget"></div>
+    <div id="todo-display-widget"></div>
+    <div id="news-widget"></div>
+  </div>
+  <div id="result-container"></div>
+  <div id="command-container">
+    <input type="text" id="commandInput" placeholder="Enter command..." autofocus>
+  </div>
+  <script src="launcher.js"></script>
+</body>
+</html>

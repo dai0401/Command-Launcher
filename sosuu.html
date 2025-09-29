@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ランダム素数ジェネレーター</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f4f4f4;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #output {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 素数ジェネレーター 🎲</h1>
+  <p>クリックするとランダムな素数が出てきます</p>
+  <button onclick="generatePrime()">素数を出す！</button>
+
+  <div id="output">---</div>
+
+  <script>
+    function isPrime(n) {
+      if (n < 2) return false;
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
+      }
+      return true;
+    }
+
+    function generatePrime() {
+      let prime = 0;
+      while (true) {
+        let candidate = Math.floor(Math.random() * 10000) + 2;
+        if (isPrime(candidate)) {
+          prime = candidate;
+          break;
+        }
+      }
+      document.getElementById("output").textContent = `🎉 素数：${prime}`;
+    }
+  </script>
+
+</body>
+</html>

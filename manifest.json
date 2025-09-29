@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Command Launcher",
+  "version": "1.0",
+  "description": "Jump to a page by entering a keyword or command.",
+  "permissions": ["tabs", "storage"],
+  "host_permissions": [
+    "https://www.nhk.or.jp/*",
+    "http://www3.nhk.or.jp/*"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "open_launcher": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "Open command launcher"
+    }
+  },
+  "action": {
+    "default_title": "Command Launcher"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

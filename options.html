@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Command Launcher Options</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      width: 400px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .action-buttons button {
+      margin-right: 5px;
+    }
+    #add-command-form {
+      margin-top: 20px;
+    }
+    #add-command-form input {
+      width: 150px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Command Launcher Options</h1>
+
+  <table id="commands-table">
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>URL</th>
+        <th class="action-buttons">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Commands will be inserted here by JavaScript -->
+    </tbody>
+  </table>
+
+  <h2>Add New Command</h2>
+  <form id="add-command-form">
+    <input type="text" id="command-input" placeholder="Command" required>
+    <input type="text" id="url-input" placeholder="URL" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <script src="options.js"></script>
+</body>
+</html>

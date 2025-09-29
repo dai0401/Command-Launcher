@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>数字を当てる</title>
+<style>
+  body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: #eef2f3;
+  }
+  h1 {
+    color: #27ae60;
+  }
+  button {
+    margin: 6px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+  #messages {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    min-height: 2rem;
+    color: #2c3e50;
+  }
+  #result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #e74c3c;
+  }
+  #resetBtn {
+    margin-top: 30px;
+    background-color: #2ecc71;
+  }
+</style>
+</head>
+<body>
+
+<h1>数字当てゲーム </h1>
+<p>0〜100の数字を当てる</p>
+
+<div id="questionButtons"></div>
+
+<div id="messages">質問を押して推測</div>
+
+<div style="margin-top:20px;">
+  <input type="number" id="answerInput" placeholder="数字を入力" min="0" max="100" />
+  <button id="answerBtn">答えを予想する</button>
+</div>
+
+<div id="result"></div>
+
+<button id="resetBtn" style="display:none;">もう一回遊ぶ</button>
+
+<script src="game.js"></script>
+
+</body>
+</html>

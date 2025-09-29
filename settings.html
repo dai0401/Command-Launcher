@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Command Launcher - Settings</title>
+  <style>
+    body {
+      background-color: #282c34;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+    h1 {
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+    .setting-item {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .setting-item .label {
+      width: 120px;
+      flex-shrink: 0;
+    }
+    .setting-item button {
+      margin: 0 5px;
+      padding: 4px 10px;
+      font-size: 16px;
+      min-width: 30px;
+    }
+    .value-display {
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+      background-color: #3a3f47;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Settings</h1>
+    <div class="setting-item">
+      <span class="label">Popup Width</span>
+      <button id="width-minus">-</button>
+      <span id="width-value" class="value-display">...</span>
+      <button id="width-plus">+</button>
+    </div>
+    <div class="setting-item">
+      <span class="label">Popup Height</span>
+      <button id="height-minus">-</button>
+      <span id="height-value" class="value-display">...</span>
+      <button id="height-plus">+</button>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

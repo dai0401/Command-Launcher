@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>高機能電卓</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            margin: 5px 0 10px 0;
+            color: #6c95eb;
+            font-size: 24px;
+        }
+        textarea#expression {
+            width: 100%;
+            height: 20%;
+            font-size: 28px;
+            background-color: #252526;
+            color: #d4d4d4;
+            border: 1px solid #3c3c3c;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            text-align: right;
+        }
+        #result {
+            width: 100%;
+            min-height: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            word-wrap: break-word;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        #result.error {
+            color: #f48771;
+        }
+        #button-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            flex-grow: 1;
+        }
+        #button-grid button {
+            font-size: 18px;
+            border-radius: 4px;
+            border: none;
+            background-color: #3e3e42;
+            color: #f1f1f1;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #button-grid button:hover {
+            background-color: #5a5a5e;
+        }
+        #button-grid button.operator {
+            background-color: #007acc;
+            color: white;
+        }
+        #button-grid button.control {
+            background-color: #6a6a6a;
+        }
+        #button-grid button.equals {
+            grid-column: span 2;
+            background-color: #098347;
+        }
+    </style>
+</head>
+<body>
+    <h1>高機能電卓</h1>
+    <textarea id="expression" placeholder="0" readonly></textarea>
+    <div id="result"></div>
+
+    <div id="button-grid">
+        <!-- Row 1 -->
+        <button data-value="sin(">sin</button>
+        <button data-value="cos(">cos</button>
+        <button data-value="tan(">tan</button>
+        <button data-value="log(">log</button>
+        <button class="control" data-action="clear">C</button>
+        <!-- Row 2 -->
+        <button data-value="sqrt(">sqrt</button>
+        <button data-value="^">^</button>
+        <button data-value="(">(</button>
+        <button data-value=")">)</button>
+        <button class="control" data-action="backspace">←</button>
+        <!-- Row 3 -->
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button class="operator" data-value="/">/</button>
+        <button data-value="pi">π</button>
+        <!-- Row 4 -->
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button class="operator" data-value="*">*</button>
+        <button data-value="e">e</button>
+        <!-- Row 5 -->
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button class="operator" data-value="-">-</button>
+        <button class="equals" data-action="equals">=</button>
+        <!-- Row 6 -->
+        <button data-value="0" style="grid-column: span 2;">0</button>
+        <button data-value=".">.</button>
+        <button class="operator" data-value="+">+</button>
+    </div>
+
+    <script src="./js/math.min.js"></script>
+    <script src="calc.js"></script>
+</body>
+</html>
